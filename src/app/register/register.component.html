@@ -1,1 +1,41 @@
-<p>register works!</p>
+<div class="box form container">
+    <h3 class="has-text-centered">Register</h3>
+    <form *ngIf="registerForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+            <label class="label">First name</label>
+            <div class="control">
+                <input placeholder="Juan" autofocus formControlName="firstName" class="input is-rounded"
+                    type="text" [ngClass]="(firstName?.invalid && (firstName?.dirty || firstName?.touched))?'is-danger':''">
+                <span class="error" *ngIf="(firstName?.invalid && (firstName?.dirty || firstName?.touched))">{{"Not a valid name"}}</span>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Last name</label>
+            <div class="control">
+                <input placeholder="Ramirez" formControlName="lastName" class="input is-rounded"
+                    type="text" [ngClass]="(lastName?.invalid && (lastName?.dirty || lastName?.touched))?'is-danger':''">
+                <span class="error" *ngIf="(lastName?.invalid && (lastName?.dirty || lastName?.touched))">{{"Not a valid name"}}</span>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Email</label>
+            <div class="control">
+                <input placeholder="ydgc@company.com" formControlName="email" class="input is-rounded"
+                    type="text" [ngClass]="(email?.invalid && (email?.dirty || email?.touched))?'is-danger':''">
+                <span class="error" *ngIf="(email?.invalid && (email?.dirty || email?.touched))">{{"Not a valid email"}}</span>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+                <input formControlName="password" class="input is-rounded" type="text"
+                    [ngClass]="(password?.invalid && (password?.dirty || password?.touched))?'is-danger':''">
+                <span class="error" *ngIf="(password?.invalid && (password?.dirty || password?.touched))">{{"Not a valid password"}}</span>
+            </div>
+        </div>
+
+        <div class="control is-justify-content-right">
+            <button [disabled]="!registerForm.valid" class="button is-link" type="submit">Send</button>
+        </div>
+    </form>
+</div>
