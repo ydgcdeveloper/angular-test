@@ -19,8 +19,8 @@ export class LoginComponent implements OnInit {
     private commonService: CommonService
   ) {
     this.loginForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(4)]],
+      email: ['ydgc@ydgc.com', [Validators.required, Validators.email]],
+      password: ['1234', [Validators.required, Validators.minLength(4)]],
     })
   }
 
