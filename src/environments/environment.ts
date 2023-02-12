@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://lzrqaxbfjb.execute-api.us-east-2.amazonaws.com/develop/api/v2'
+  apiBaseUrl: 'https://lzrqaxbfjb.execute-api.us-east-2.amazonaws.com/develop/api/v2',
+  tokenName: 'session_token'
 };
 
 /*
