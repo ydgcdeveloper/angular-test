@@ -21,14 +21,14 @@
             <label class="label">Email</label>
             <div class="control">
                 <input placeholder="ydgc@company.com" formControlName="email" class="input is-rounded"
-                    type="text" [ngClass]="(email?.invalid && (email?.dirty || email?.touched))?'is-danger':''">
+                    type="email" [ngClass]="(email?.invalid && (email?.dirty || email?.touched))?'is-danger':''">
                 <span class="error" *ngIf="(email?.invalid && (email?.dirty || email?.touched))">{{"Not a valid email"}}</span>
             </div>
         </div>
         <div class="field">
             <label class="label">Password</label>
             <div class="control">
-                <input formControlName="password" class="input is-rounded" type="text"
+                <input formControlName="password" class="input is-rounded" type="password"
                     [ngClass]="(password?.invalid && (password?.dirty || password?.touched))?'is-danger':''">
                 <span class="error" *ngIf="(password?.invalid && (password?.dirty || password?.touched))">{{"Not a valid password"}}</span>
             </div>
